@@ -21,6 +21,8 @@
 bld/
 [Bb]in/
 [Oo]bj/
+UmbracoSecondDemo/App_Data/TEMP/
+UmbracoSecondDemo/App_Data/Logs/
 
 # Visual Studio 2015 cache/options directory
 .vs/
