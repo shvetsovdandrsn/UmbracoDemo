@@ -8,7 +8,7 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "1a7ff0f700ce79b9")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "3188d9ad7a91a51")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
@@ -1127,6 +1127,59 @@ namespace Umbraco.Web.PublishedContentModels
 		public bool UmbracoNavihide
 		{
 			get { return Umbraco.Web.PublishedContentModels.NavigationBase.GetUmbracoNavihide(this); }
+		}
+	}
+
+	/// <summary>Cart</summary>
+	[PublishedContentModel("cart")]
+	public partial class Cart : PublishedContentModel
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "cart";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public Cart(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Cart, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// NameSurname
+		///</summary>
+		[ImplementPropertyType("customerName")]
+		public string CustomerName
+		{
+			get { return this.GetPropertyValue<string>("customerName"); }
+		}
+
+		///<summary>
+		/// Email
+		///</summary>
+		[ImplementPropertyType("email")]
+		public string Email
+		{
+			get { return this.GetPropertyValue<string>("email"); }
+		}
+
+		///<summary>
+		/// Featured Items
+		///</summary>
+		[ImplementPropertyType("featuredItems")]
+		public IEnumerable<IPublishedContent> FeaturedItems
+		{
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("featuredItems"); }
 		}
 	}
 

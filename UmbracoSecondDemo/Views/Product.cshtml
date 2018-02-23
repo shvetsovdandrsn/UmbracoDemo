@@ -18,8 +18,8 @@
                 <h1>@Model.Content.ProductName</h1>
                 <div class="product-price">@Model.Content.Parent.GetPropertyValue("DefaultCurrency") @Model.Content.Price.ToString("F")</div>
                 <div class="product-teaser">@Model.Content.Description</div>
-                <div class="product-button">
-                    <button class="button button--border--solid">Buy</button>
+                <div class="product-button">@Umbraco.Field("sku")
+                    <button class="button button--border--solid" onclick='buyClick("@Umbraco.Field("sku")")'>Buy</button>
                 </div>
                 <div class="product-advantages">
                     @if (Model.Content.Features != null)
@@ -43,3 +43,13 @@
         @Html.GetGridHtml(Model.Content, "bodyText", "bootstrap3-fluid")
     </div>
 </section>
+
+<script type="text/javascript">
+    function buyClick(itemIdentifier)
+    {
+        $.get("/umbraco/surface/CartEditor/AddToCart?itemId=" + itemIdentifier,
+            function (response) {
+                console.log(response);
+            });
+    }
+</script>

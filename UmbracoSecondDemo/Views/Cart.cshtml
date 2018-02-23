@@ -1,0 +1,29 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<UmbracoSecondDemo.Controllers.CartItemsViewModel>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+    Layout = "Master.cshtml";
+}
+
+<section class="section">
+
+    <div class="container">
+
+        <table border="1">
+            <caption>Items in cart:</caption>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Product Count</th>
+                </tr>
+                
+            @foreach (KeyValuePair<string,int> productData in Model.Items)
+            {
+                <tr>
+                    <td>@productData.Key</td>
+                    <td>@productData.Value</td>
+                </tr>
+            }
+        </table>
+        
+    </div>
+
+</section>
