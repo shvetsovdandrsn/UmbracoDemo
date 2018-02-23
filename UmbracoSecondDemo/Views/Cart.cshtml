@@ -3,11 +3,12 @@
 @{
     Layout = "Master.cshtml";
 }
+@Html.Partial("~/Views/Partials/SectionHeader.cshtml")
 
 <section class="section">
-
+    <button class="button button--border--solid" onclick='resetCartClick()'>Reset cart items</button>
+    
     <div class="container">
-
         <table border="1">
             <caption>Items in cart:</caption>
                 <tr>
@@ -20,10 +21,31 @@
                 <tr>
                     <td>@productData.Key</td>
                     <td>@productData.Value</td>
+                    <td><button class="button button--border--solid" onclick='removeCartItemClick("@productData.Key")'>Remove 1 Instance</button></td>
                 </tr>
             }
         </table>
-        
+        Total sum: 
     </div>
 
 </section>
+
+
+<script type="text/javascript">
+    function resetCartClick()
+    {
+        $.post("/umbraco/surface/CartEditor/ResetCartItems",
+            function (response) {
+                alert("You removed all items from the cart!");
+                window.location = window.location;
+            });
+    }
+    function removeCartItemClick(itemIdentifier)
+    {
+        $.post("/umbraco/surface/CartEditor/RemoveItem", { itemIdentifier },
+            function (response) {
+                alert("One instance of Item was removed from the Cart!");
+                window.location = window.location;
+            });
+    }
+</script>

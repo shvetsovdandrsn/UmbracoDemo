@@ -25,10 +25,40 @@ namespace UmbracoSecondDemo.Controllers
             int itemCurrentCount;
             var ifItemAlreadyInList = DataStorage.CartItems.TryGetValue(itemId, out itemCurrentCount);
 
-            if (ifItemAlreadyInList)
-                itemCurrentCount++;
+            itemCurrentCount++;
 
-            DataStorage.CartItems.Add(itemId, itemCurrentCount);
+            if (ifItemAlreadyInList)
+                DataStorage.CartItems[itemId] = itemCurrentCount;
+            else
+                DataStorage.CartItems.Add(itemId, itemCurrentCount);
+
+            return true;
+        }
+
+        [HttpPost]
+        [NotChildAction]
+        public bool RemoveItem(string itemId)
+        {
+            int itemCurrentCount;
+            var isItemInList = DataStorage.CartItems.TryGetValue(itemId, out itemCurrentCount);
+        
+            if (isItemInList)
+            {
+                if(itemCurrentCount > 1)
+                    DataStorage.CartItems[itemId] = --itemCurrentCount;
+                else
+                    DataStorage.CartItems.Remove(itemId);
+            }
+                
+            return true;
+        }
+
+        [HttpPost]
+        [NotChildAction]
+        public bool ResetCartItems()
+        {
+            DataStorage.CartItems.Clear();
+
             return true;
         }
     }
