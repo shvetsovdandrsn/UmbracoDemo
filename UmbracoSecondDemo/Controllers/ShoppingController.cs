@@ -14,7 +14,7 @@ namespace UmbracoSecondDemo.Controllers
     {
         public static Dictionary<string, int> CartItems = new Dictionary<string, int>();
     }
-
+    
     public class CartEditorController : SurfaceController
     {
         // GET: Shopping

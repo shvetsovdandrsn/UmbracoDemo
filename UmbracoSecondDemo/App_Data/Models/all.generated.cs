@@ -8,7 +8,7 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "3188d9ad7a91a51")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "58c06a003fc6fcb0")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
@@ -1153,33 +1153,6 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Cart, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-		}
-
-		///<summary>
-		/// NameSurname
-		///</summary>
-		[ImplementPropertyType("customerName")]
-		public string CustomerName
-		{
-			get { return this.GetPropertyValue<string>("customerName"); }
-		}
-
-		///<summary>
-		/// Email
-		///</summary>
-		[ImplementPropertyType("email")]
-		public string Email
-		{
-			get { return this.GetPropertyValue<string>("email"); }
-		}
-
-		///<summary>
-		/// Featured Items
-		///</summary>
-		[ImplementPropertyType("featuredItems")]
-		public IEnumerable<IPublishedContent> FeaturedItems
-		{
-			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("featuredItems"); }
 		}
 	}
 

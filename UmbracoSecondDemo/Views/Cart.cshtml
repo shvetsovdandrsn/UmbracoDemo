@@ -2,34 +2,61 @@
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
     Layout = "Master.cshtml";
+	var productsItem = Model.Content.Site().Children("products")
+						.Where(x => x.IsVisible())
+						.FirstOrDefault();
+						
+	var featuredProducts = (System.Collections.Generic.IEnumerable<IPublishedContent>)productsItem.GetPropertyValue("featuredProducts");
+	
+	var productsInCart = featuredProducts.Where(x => Model.Items.Keys.Contains(x.GetPropertyValue("SKU")));
+	
+	Dictionary<IPublishedContent, int> publishedContentCountsByContent = new Dictionary<IPublishedContent, int>();
+	
+	foreach (KeyValuePair<string, int> skuCountPair in Model.Items)
+    {
+        var foundProduct = productsInCart.FirstOrDefault(p => ((string)p.GetPropertyValue("SKU")).Contains(skuCountPair.Key));
+        publishedContentCountsByContent.Add(foundProduct, skuCountPair.Value);
+    }
 }
 @Html.Partial("~/Views/Partials/SectionHeader.cshtml")
 
 <section class="section">
-    <button class="button button--border--solid" onclick='resetCartClick()'>Reset cart items</button>
-    
+    <h1 style="text-align:center">Your Cart</h1>
     <div class="container">
-        <table border="1">
-            <caption>Items in cart:</caption>
+        @{
+            decimal totalSum = 0.0M;
+        }
+        
+        <table class="cart" border="1" style="text-align:center;">
+            <caption></caption>
                 <tr>
                     <th>Product Name</th>
                     <th>Product Count</th>
+                    <th>Position Price</th>
                 </tr>
-                
-            @foreach (KeyValuePair<string,int> productData in Model.Items)
+            
+            
+            @foreach (var productCountPair in publishedContentCountsByContent)
             {
                 <tr>
-                    <td>@productData.Key</td>
-                    <td>@productData.Value</td>
-                    <td><button class="button button--border--solid" onclick='removeCartItemClick("@productData.Key")'>Remove 1 Instance</button></td>
+                    @{
+                        decimal positionSum = ((decimal)productCountPair.Key.GetProperty("Price").Value) * productCountPair.Value;
+                        totalSum += positionSum;
+                    }
+                    <td> <a href="@productCountPair.Key.Url">@productCountPair.Key.Name</a> </td>
+                    <td>@productCountPair.Value</td>
+                    <td>@positionSum $</td>
+                    <td>
+                        <button class="button button--border--solid" onclick='removeCartItemClick("@productCountPair.Key.GetPropertyValue("SKU")")'>Remove 1 Instance</button>
+                    </td>
                 </tr>
             }
         </table>
-        Total sum:
+        <br/> Total sum: @totalSum $<br/>
+        <button class="button button--border--solid" onclick='resetCartClick()'>Reset cart items</button>
     </div>
 
 </section>
-
 
 <script type="text/javascript">
     function resetCartClick()
@@ -48,7 +75,7 @@
                 itemId:itemIdentifier
             },
             function (response) {
-                alert("One instance of Item was removed from the Cart!");
+                alert("One instance of " + itemIdentifier + " was removed from the Cart!");
                 window.location = window.location;
             });
     }

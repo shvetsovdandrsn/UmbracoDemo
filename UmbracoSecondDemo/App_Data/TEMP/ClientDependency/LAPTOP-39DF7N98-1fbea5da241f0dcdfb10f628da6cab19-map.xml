@@ -1,2 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<map />
+<map>
+  <item key="L3VtYnJhY28vbGliL0NvZGVNaXJyb3IvYWRkb24vZGlhbG9nL2RpYWxvZy5jc3M7L3VtYnJhY28vbGliL0NvZGVNaXJyb3IvbGliL2NvZGVtaXJyb3IuY3NzOy91bWJyYWNvX2NsaWVudC9Db2RlQXJlYS9zdHlsZXMuY3NzOy91bWJyYWNvL2Fzc2V0cy9jc3MvdW1icmFjby5jc3M7" file="c:\users\fancy\documents\visual studio 2015\Projects\UmbracoSecondDemo\UmbracoSecondDemo\App_Data\TEMP\ClientDependency\1_a99ccfdcc64b4d749877dbacaa79a511.cdC" compression="gzip" version="1">
+    <files />
+  </item>
+  <item key="L3VtYnJhY29fY2xpZW50L0FwcGxpY2F0aW9uL1VtYnJhY29DbGllbnRNYW5hZ2VyLmpzOw" file="c:\users\fancy\documents\visual studio 2015\Projects\UmbracoSecondDemo\UmbracoSecondDemo\App_Data\TEMP\ClientDependency\1_3b56e0254f064cf0876ed40f039b07c6.cdJ" compression="gzip" version="1">
+    <files />
+  </item>
+  <item key="L3VtYnJhY29fY2xpZW50L0FwcGxpY2F0aW9uL05hbWVzcGFjZU1hbmFnZXIuanM7L3VtYnJhY29fY2xpZW50L0FwcGxpY2F0aW9uL1VtYnJhY29VdGlscy5qczsvdW1icmFjb19jbGllbnQvdWkvanNvbjIuanM7L3VtYnJhY29fY2xpZW50L3VpL2Jhc2UyLmpzOy91bWJyYWNvX2NsaWVudC9VSS9rbm9ja291dC5qczsvdW1icmFjb19jbGllbnQvVUkva25vY2tvdXQubWFwcGluZy5qczs" file="c:\users\fancy\documents\visual studio 2015\Projects\UmbracoSecondDemo\UmbracoSecondDemo\App_Data\TEMP\ClientDependency\1_782f18c4ad82492690b505640320782b.cdJ" compression="gzip" version="1">
+    <files />
+  </item>
+  <item key="L3VtYnJhY29fY2xpZW50L3VpL2pxdWVyeS5qczsvdW1icmFjb19jbGllbnQvdWkvanF1ZXJ5dWkuanM7L3VtYnJhY28vbGliL2pxdWVyeS1taWdyYXRlL2pxdWVyeS1taWdyYXRlLm1pbi5qczs" file="c:\users\fancy\documents\visual studio 2015\Projects\UmbracoSecondDemo\UmbracoSecondDemo\App_Data\TEMP\ClientDependency\1_0a4364afa7f942c29bc35400b0393cef.cdJ" compression="gzip" version="1">
+    <files />
+  </item>
+  <item key="L3VtYnJhY29fY2xpZW50L0FwcGxpY2F0aW9uL0V4dGVuc2lvbnMuanM7L3VtYnJhY29fY2xpZW50L0FwcGxpY2F0aW9uL1VtYnJhY29BcHBsaWNhdGlvbkFjdGlvbnMuanM7L3VtYnJhY29fY2xpZW50L0FwcGxpY2F0aW9uL0hpc3RvcnlNYW5hZ2VyLmpzOw" file="c:\users\fancy\documents\visual studio 2015\Projects\UmbracoSecondDemo\UmbracoSecondDemo\App_Data\TEMP\ClientDependency\1_3fb3730cdc55471ca4ba1fa516a939c4.cdJ" compression="gzip" version="1">
+    <files />
+  </item>
+  <item key="L3VtYnJhY29fY2xpZW50L0FwcGxpY2F0aW9uL2pRdWVyeS9qcXVlcnkuYmEtYmJxLm1pbi5qczsvdW1icmFjb19jbGllbnQvdWkvalF1ZXJ5V3Jlc2l6ZS5qczsvdW1icmFjb19jbGllbnQvbW9kYWwvanF1ZXJ5LnNpbXBsZW1vZGFsLjEuNC4xLmN1c3RvbS5qczsvdW1icmFjb19jbGllbnQvQXBwbGljYXRpb24valF1ZXJ5L2pxdWVyeS5jb29raWUuanM7L3VtYnJhY29fY2xpZW50L0FwcGxpY2F0aW9uL0pRdWVyeS9qcXVlcnkubWV0YWRhdGEubWluLmpzOy91bWJyYWNvX2NsaWVudC9BcHBsaWNhdGlvbi9qUXVlcnkvanF1ZXJ5LmhvdGtleXMuanM7" file="c:\users\fancy\documents\visual studio 2015\Projects\UmbracoSecondDemo\UmbracoSecondDemo\App_Data\TEMP\ClientDependency\1_b6d6889debf4429ba96e462be29c9293.cdJ" compression="gzip" version="1">
+    <files />
+  </item>
+  <item key="L3VtYnJhY28vbGliL0NvZGVNaXJyb3IvbGliL2NvZGVtaXJyb3IuanM7L3VtYnJhY28vbGliL0NvZGVNaXJyb3IvYWRkb24vZWRpdC9tYXRjaGJyYWNrZXRzLmpzOy91bWJyYWNvL2xpYi9Db2RlTWlycm9yL21vZGUvY3NzL2Nzcy5qczsvdW1icmFjby9saWIvQ29kZU1pcnJvci9hZGRvbi9zZWFyY2gvc2VhcmNoLmpzOy91bWJyYWNvL2xpYi9Db2RlTWlycm9yL2FkZG9uL3NlYXJjaC9zZWFyY2hjdXJzb3IuanM7L3VtYnJhY28vbGliL0NvZGVNaXJyb3IvYWRkb24vZGlhbG9nL2RpYWxvZy5qczsvdW1icmFjb19jbGllbnQvbW9kYWwvbW9kYWwuanM7L3VtYnJhY29fY2xpZW50L3VpL2RlZmF1bHQuanM7L3VtYnJhY28vbGliL2Jvb3RzdHJhcC9qcy9ib290c3RyYXAuMi4zLjIubWluLmpzOy91bWJyYWNvL2xpYi91bWJyYWNvL2NvbXBhdC5qczsvdW1icmFjb19jbGllbnQvRWRpdG9ycy9FZGl0U3R5bGVTaGVldC5qczsvdW1icmFjb19jbGllbnQvQ29kZUFyZWEvamF2YXNjcmlwdC5qczsvdW1icmFjb19jbGllbnQvQ29kZUFyZWEvVW1icmFjb0VkaXRvci5qczsvdW1icmFjb19jbGllbnQvQXBwbGljYXRpb24valF1ZXJ5L2pxdWVyeS1maWVsZHNlbGVjdGlvbi5qczs" file="c:\users\fancy\documents\visual studio 2015\Projects\UmbracoSecondDemo\UmbracoSecondDemo\App_Data\TEMP\ClientDependency\1_95f3264cd3784046bf2ba02f7b33d230.cdJ" compression="gzip" version="1">
+    <files />
+  </item>
+</map>

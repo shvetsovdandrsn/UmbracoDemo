@@ -193,6 +193,11 @@ td, th {
     padding: 0
 }
 
+table.cart th {
+	padding-left:20px;
+	padding-right:20px;
+}
+
 .container {
     margin-right: auto;
     margin-left: auto;
