@@ -5,6 +5,8 @@
 }
 @Html.Partial("~/Views/Partials/SectionHeader.cshtml")
 
+<link href="~/Content/toastr.css" rel="stylesheet" />
+<script src="~/Scripts/toastr.js"></script>
 <section class="section">
     <button class="button button--border--solid" onclick='resetCartClick()'>Reset cart items</button>
     
@@ -32,24 +34,55 @@
 
 
 <script type="text/javascript">
-    function resetCartClick()
-    {
+    function resetCartClick() {
         $.post("/umbraco/surface/CartEditor/ResetCartItems",
             function (response) {
-                alert("You removed all items from the cart!");
-                window.location = window.location;
+                toastr.options = {
+                    "closeButton": false,
+                    "debug": false,
+                    "newestOnTop": false,
+                    "progressBar": false,
+                    "positionClass": "toast-top-center",
+                    "preventDuplicates": false,
+                    "onclick": null,
+                    "showDuration": "300",
+                    "hideDuration": "1000",
+                    "timeOut": "5000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                }
+                toastr.success("You removed all items from the cart!");
             });
-    }
-    function removeCartItemClick(itemIdentifier)
-    {
+    };
+
+    function removeCartItemClick(itemIdentifier) {
         $.post(
-            "/umbraco/surface/CartEditor/RemoveItem", 
-            { 
-                itemId:itemIdentifier
+            "/umbraco/surface/CartEditor/RemoveItem",
+            {
+                itemId: itemIdentifier
             },
             function (response) {
-                alert("One instance of Item was removed from the Cart!");
-                window.location = window.location;
+                toastr.options = {
+                    "closeButton": false,
+                    "debug": false,
+                    "newestOnTop": false,
+                    "progressBar": false,
+                    "positionClass": "toast-top-center",
+                    "preventDuplicates": false,
+                    "onclick": function () { window.location = window.location},
+                    "showDuration": "300",
+                    "hideDuration": "1000",
+                    "timeOut": "5000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                }
+                toastr.success("One instance of Item was removed from the Cart!");
             });
-    }
+    };
 </script>

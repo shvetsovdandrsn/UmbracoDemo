@@ -48,8 +48,25 @@
     function buyClick(itemIdentifier)
     {
         $.get("/umbraco/surface/CartEditor/AddToCart?itemId=" + itemIdentifier,
-            function (response) {
-                alert("Item was added to the Cart!");
-            });
+        function (response) {
+            toastr.options = {
+                "closeButton": false,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": false,
+                "positionClass": "toast-top-center",
+                "preventDuplicates": false,
+                "onclick": function () { window.location = window.location},
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            }
+            toastr.success("Item was added to the Cart!");
+        });
     }
 </script>
