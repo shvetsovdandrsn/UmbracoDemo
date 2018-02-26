@@ -25,7 +25,7 @@
                 </tr>
             }
         </table>
-        Total sum: 
+        Total sum:
     </div>
 
 </section>
@@ -42,7 +42,11 @@
     }
     function removeCartItemClick(itemIdentifier)
     {
-        $.post("/umbraco/surface/CartEditor/RemoveItem", { itemIdentifier },
+        $.post(
+            "/umbraco/surface/CartEditor/RemoveItem", 
+            { 
+                itemId:itemIdentifier
+            },
             function (response) {
                 alert("One instance of Item was removed from the Cart!");
                 window.location = window.location;
